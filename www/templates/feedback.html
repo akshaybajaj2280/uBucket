@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Sign In</title>
+
+    <!-- ionic css -->
+    <link href="lib/css/ionic.min.css" rel="stylesheet">
+
+    <!-- your app's css -->
+    <link href="css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+
+    <!-- angularjs scripts -->
+    <script src="lib/js/ionic.js"></script>
+    <script src="lib/js/angular/angular.js"></script>
+    <script src="lib/js/angular/angular-animate.js"></script>
+    <script src="lib/js/angular/angular-sanitize.js"></script>
+    <script src="lib/js/angular-ui/angular-ui-router.js"></script>
+    <script src="lib/js/ionic-angular.js"></script>
+    <script type="text/javascript" src="lib/js/parse-1.2.16.min.js"></script>
+
+    <!-- cordova script -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's script -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+
+<body ng-app="ubucket">
+    <header class="bar bar-header bar-positive">
+      <button id="backtoabout" class="button button-icon" ng-click="loadAbout()">
+        <i class="icon ion-ios7-arrow-left"></i>
+      </button>
+      <h1 class="title" id="title">Feedback</h1>
+    </header>
+    <div class="content">
+      <form ng-controller="FeedbackCtrl" ng-submit="process_feedback(feedback)">
+          <div class="list list-inset">
+            <p>Have a question, comment, or concern? Send us an email!</p>
+            <label class="item item-input">
+              <textarea type="text" ng-model="feedback" placeholder="Your feedback here..." rows="3"></textarea>
+            </label>
+            <button type="submit" id="submit" class="button button-block button-positive">
+              Submit
+            </button>
+            <div id="response"><center>{{response}}</center></div>
+          </div>
+      </form>
+      <div class="ng-view"></div>
+    </div>
+</body>
+</html>

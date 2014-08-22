@@ -1,0 +1,79 @@
+<!-- <view title="'University Bucketlist'"> -->
+<header class="bar bar-header bar-positive">
+  <h1 class="title" id="title">University Bucket List</h1>
+  <button id="compose" class="button button-icon" ng-click="newTask()">
+    <i class="icon ion-ios7-compose-outline"></i>
+  </button>
+</header>
+
+<content has-header="true" has-tabs="true">
+
+  <div ng-controller="PublicCtrl">
+    <ul class="list">
+      <li class="item item-text-wrap row" ng-repeat="note in notes">
+        <div class="col col-10">
+          <button class="button button-icon upvote-{{note.upvote}}" ng-click="toggleUpVote(note)">
+            <i class="icon ion-arrow-up-a" ></i>
+            <div class="upvote-count upvote-{{note.upvote}}">
+              {{note.voteCount}}
+            </div>
+          </button>
+        </div>
+        <div class="col col-offset-5">
+          <div class="row-wrapper note-text">
+            <div>{{note.title}}</div>
+            <small> <a href="#/tab/public/{{note.id}}"> {{note.commentCount}} comments </a></small>
+          </div>
+        </div>
+        <button class="button button-icon" ng-click="addToPrivate(note)" ng-show="addToPvt(note)">
+            <i class="icon ion-ios7-plus-empty"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+      <!-- Script for new story modal window -->
+<script id="new-task.html" type="text/ng-template">
+
+  <div class="modal">
+    <!-- Modal header bar -->
+    <header class="bar bar-header bar-positive">
+      <h1 class="title">New Story</h1>
+      <button class="button button-clear button-secondary" ng-click="closeNewTask()">Cancel</button>
+    </header>
+
+    <!-- Modal content area -->
+    <ion-content has-header="true">
+
+    <br/><br/><br/>
+
+      <form ng-submit="submitter(currentTaskTitle, access)">
+        <div class="list">
+          <label class="item item-input item-stacked-label">
+            
+            <input type="text" placeholder="What do you want to do?" ng-model="currentTaskTitle" id="currentTaskTitle">
+          </label>
+          <br/>
+          <li class="item item-toggle">
+             Add to public list?
+             <label class="toggle">
+               <input type="checkbox" ng-model="access">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+        </div>
+        <div class="padding">
+          <button type="submit" id="submit" class="button button-block button-positive">Create Story</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
+
+</script>
+
+</content>
+<!-- </view> -->

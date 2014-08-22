@@ -1,0 +1,139 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'ios-sim' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose cache add [ 'ios-sim', null ]
+5 verbose cache add name=undefined spec="ios-sim" args=["ios-sim",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'ios-sim',
+6 verbose parsed url   path: 'ios-sim',
+6 verbose parsed url   href: 'ios-sim' }
+7 silly lockFile 6af69284-ios-sim ios-sim
+8 verbose lock ios-sim /Users/AkshayBajaj/.npm/6af69284-ios-sim.lock
+9 silly lockFile 6af69284-ios-sim ios-sim
+10 silly lockFile 6af69284-ios-sim ios-sim
+11 verbose addNamed [ 'ios-sim', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 03dce7cc-ios-sim ios-sim@
+14 verbose lock ios-sim@ /Users/AkshayBajaj/.npm/03dce7cc-ios-sim.lock
+15 silly addNameRange { name: 'ios-sim', range: '*', hasData: false }
+16 verbose url raw ios-sim
+17 verbose url resolving [ 'https://registry.npmjs.org/', './ios-sim' ]
+18 verbose url resolved https://registry.npmjs.org/ios-sim
+19 info trying registry request attempt 1 at 00:59:28
+20 verbose etag "8B8HVC4T0EN579GHVV2CCESPK"
+21 http GET https://registry.npmjs.org/ios-sim
+22 http 304 https://registry.npmjs.org/ios-sim
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Fri, 21 Mar 2014 05:59:29 GMT',
+23 silly registry.get     server: 'Apache',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'last-modified': 'Fri, 21 Mar 2014 05:59:29 GMT',
+23 silly registry.get     'cache-control': 'max-age=1',
+23 silly registry.get     etag: '"8B8HVC4T0EN579GHVV2CCESPK"',
+23 silly registry.get     'x-served-by': 'cache-at52-ATL',
+23 silly registry.get     'x-cache': 'MISS',
+23 silly registry.get     'x-cache-hits': '0',
+23 silly registry.get     'x-timer': 'S1395381569.014848471,VS0,VE117',
+23 silly registry.get     vary: 'Accept',
+23 silly registry.get     'content-length': '0',
+23 silly registry.get     'keep-alive': 'timeout=10, max=50',
+23 silly registry.get     connection: 'Keep-Alive' } ]
+24 verbose etag ios-sim from cache
+25 silly addNameRange number 2 { name: 'ios-sim', range: '*', hasData: true }
+26 silly addNameRange versions [ 'ios-sim', [ '1.8.0', '1.8.1', '1.8.2', '1.9.0' ] ]
+27 verbose addNamed [ 'ios-sim', '1.9.0' ]
+28 verbose addNamed [ '1.9.0', '1.9.0' ]
+29 silly lockFile 08b821e4-ios-sim-1-9-0 ios-sim@1.9.0
+30 verbose lock ios-sim@1.9.0 /Users/AkshayBajaj/.npm/08b821e4-ios-sim-1-9-0.lock
+31 silly lockFile 08b821e4-ios-sim-1-9-0 ios-sim@1.9.0
+32 silly lockFile 08b821e4-ios-sim-1-9-0 ios-sim@1.9.0
+33 silly lockFile 03dce7cc-ios-sim ios-sim@
+34 silly lockFile 03dce7cc-ios-sim ios-sim@
+35 silly resolved [ { name: 'ios-sim',
+35 silly resolved     version: '1.9.0',
+35 silly resolved     description: 'launch iOS apps into the iOS Simulator from the command line (Xcode 5.1)',
+35 silly resolved     main: 'ios-sim',
+35 silly resolved     scripts: { preinstall: 'rake build' },
+35 silly resolved     bin: { 'ios-sim': 'build/Release/ios-sim' },
+35 silly resolved     repository: { type: 'git', url: 'https://github.com/phonegap/ios-sim' },
+35 silly resolved     keywords: [ 'ios-sim', 'iOS Simulator' ],
+35 silly resolved     author: { name: 'Landon Fuller, Jeff Haynie, Eloy Duran, Shazron Abdullah' },
+35 silly resolved     license: 'MIT',
+35 silly resolved     readme: 'ios-sim\n=======\n\nThe ios-sim tool is a command-line utility that launches an iOS application on\nthe iOS Simulator. This allows for niceties such as automated testing without\nhaving to open XCode.\n\nFeatures\n--------\n\n* Choose the device family to simulate, i.e. iPhone or iPad.\n* Setup environment variables.\n* Pass arguments to the application.\n* See the stdout and stderr, or redirect them to files.\n\nSee the `--help` option for more info.\n\nInstallation\n------------\n\nWith node.js (at least 0.10.20):\n\n    $ sudo npm install ios-sim -g\n\nDownload an archive:\n\n    $ curl -L https://github.com/phonegap/ios-sim/zipball/1.8.2 -o ios-sim-1.8.2.zip\n    $ unzip ios-sim-1.8.2.zip\n\nOr from a git clone:\n\n    $ git clone git://github.com/phonegap/ios-sim.git\n\nThen build and install from the source root:\n\n    $ rake install prefix=/usr/local/\n\n\nDevelopment\n-----------\n\nWhen you want to release a version, do:\n\n    $ rake version:bump v=NEW_VERSION\n    $ rake release\n    $ npm version NEW_VERSION -m "Updated to npm version %s"\n    \ntmux\n-----\n\nTo get ios-sim to launch correctly within tmux use the reattach-to-user-namespace wrapper.\n\n```\nreattach-to-user-namespace ios-sim launch ./build/MyTestApp.app\n```\n*source:* https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard\n\n*brew:*  ```brew install reattach-to-user-namespace```\n\nLicense\n-------\n\nOriginal author: Landon Fuller <landonf@plausiblelabs.com>\nCopyright (c) 2008-2011 Plausible Labs Cooperative, Inc.\nAll rights reserved.\n\nThis project is available under the MIT license. See [LICENSE][license].\n\n[license]: https://github.com/phonegap/ios-sim/blob/master/LICENSE\n',
+35 silly resolved     readmeFilename: 'README.md',
+35 silly resolved     bugs: { url: 'https://github.com/phonegap/ios-sim/issues' },
+35 silly resolved     homepage: 'https://github.com/phonegap/ios-sim',
+35 silly resolved     _id: 'ios-sim@1.9.0',
+35 silly resolved     _from: 'ios-sim@' } ]
+36 info install ios-sim@1.9.0 into /usr/local/lib
+37 info installOne ios-sim@1.9.0
+38 info /usr/local/lib/node_modules/ios-sim unbuild
+39 verbose tar unpack /Users/AkshayBajaj/.npm/ios-sim/1.9.0/package.tgz
+40 silly lockFile 5027580f-r-local-lib-node-modules-ios-sim tar:///usr/local/lib/node_modules/ios-sim
+41 verbose lock tar:///usr/local/lib/node_modules/ios-sim /Users/AkshayBajaj/.npm/5027580f-r-local-lib-node-modules-ios-sim.lock
+42 silly lockFile 036c4399-aj-npm-ios-sim-1-9-0-package-tgz tar:///Users/AkshayBajaj/.npm/ios-sim/1.9.0/package.tgz
+43 verbose lock tar:///Users/AkshayBajaj/.npm/ios-sim/1.9.0/package.tgz /Users/AkshayBajaj/.npm/036c4399-aj-npm-ios-sim-1-9-0-package-tgz.lock
+44 silly gunzTarPerm modes [ '755', '644' ]
+45 silly gunzTarPerm extractEntry package.json
+46 silly gunzTarPerm extractEntry .npmignore
+47 silly gunzTarPerm extractEntry README.md
+48 silly gunzTarPerm extractEntry LICENSE
+49 silly gunzTarPerm extractEntry DVTiPhoneSimulatorRemoteClient/DVTiPhoneSimulatorRemoteClient.h
+50 silly gunzTarPerm extractEntry README.template.md
+51 silly gunzTarPerm extractEntry Rakefile
+52 silly gunzTarPerm extractEntry Source/.npmignore
+53 silly gunzTarPerm extractEntry Source/NSString+expandPath.h
+54 silly gunzTarPerm extractEntry Source/NSString+expandPath.m
+55 silly gunzTarPerm extractEntry Source/iPhoneSimulator.h
+56 silly gunzTarPerm extractEntry Source/iPhoneSimulator.m
+57 silly gunzTarPerm extractEntry Source/main.m
+58 silly gunzTarPerm extractEntry Source/nsprintf.h
+59 silly gunzTarPerm extractEntry Source/nsprintf.m
+60 silly gunzTarPerm extractEntry Source/version.h
+61 silly gunzTarPerm extractEntry ios-sim.xcodeproj/.npmignore
+62 silly gunzTarPerm extractEntry ios-sim.xcodeproj/project.pbxproj
+63 silly gunzTarPerm extractEntry ios-sim.xcodeproj/xcshareddata/xcschemes/ios-sim.xcscheme
+64 silly gunzTarPerm extractEntry ios-sim_Prefix.pch
+65 silly lockFile 5027580f-r-local-lib-node-modules-ios-sim tar:///usr/local/lib/node_modules/ios-sim
+66 silly lockFile 5027580f-r-local-lib-node-modules-ios-sim tar:///usr/local/lib/node_modules/ios-sim
+67 silly lockFile 036c4399-aj-npm-ios-sim-1-9-0-package-tgz tar:///Users/AkshayBajaj/.npm/ios-sim/1.9.0/package.tgz
+68 silly lockFile 036c4399-aj-npm-ios-sim-1-9-0-package-tgz tar:///Users/AkshayBajaj/.npm/ios-sim/1.9.0/package.tgz
+69 info preinstall ios-sim@1.9.0
+70 verbose unsafe-perm in lifecycle false
+71 info ios-sim@1.9.0 Failed to exec preinstall script
+72 info /usr/local/lib/node_modules/ios-sim unbuild
+73 info preuninstall ios-sim@1.9.0
+74 info uninstall ios-sim@1.9.0
+75 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild ios-sim@1.9.0
+76 verbose /usr/local/bin,[object Object] binRoot
+77 info postuninstall ios-sim@1.9.0
+78 error ios-sim@1.9.0 preinstall: `rake build`
+78 error Exit status 8
+79 error Failed at the ios-sim@1.9.0 preinstall script.
+79 error This is most likely a problem with the ios-sim package,
+79 error not with npm itself.
+79 error Tell the author that this fails on your system:
+79 error     rake build
+79 error You can get their info via:
+79 error     npm owner ls ios-sim
+79 error There is likely additional logging output above.
+80 error System Darwin 13.1.0
+81 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "ios-sim"
+82 error cwd /Users/AkshayBajaj/Documents/School/Spring 2014/CS 429/uBucketApp/branches/bajaj10/uBucketApp
+83 error node -v v0.10.26
+84 error npm -v 1.4.3
+85 error code ELIFECYCLE
+86 verbose exit [ 1, true ]

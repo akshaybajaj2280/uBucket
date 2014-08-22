@@ -1,0 +1,86 @@
+<header class="bar bar-header bar-positive">
+    <a class="button icon-left ion-chevron-left button-clear" href="#/tab/public"></a>
+  <h1 class="title" id="title">Comments</h1>
+  <button id="compose" class="button button-icon" ng-click="newTask()">
+    <i class="icon ion-ios7-compose-outline"></i>
+  </button>
+</header>
+
+<!--<view title="note.title"> -->
+  <content has-header="true" padding="true">
+
+  <div ng-controller="PublicCommentsCtrl">
+    <ul class="list">
+      <!-- <div id="notes"> -->
+      <li class="item item-text-wrap row" ng-repeat="comment in comments">
+        <!-- <div class="row"> -->
+        <div class="col col-10">
+          <button class="button button-icon upvote-{{comment.upvote}}" ng-click="toggleUpVote(comment)">
+            <i class="icon ion-arrow-up-a" ></i>
+            <div class="upvote-count upvote-{{comment.upvote}}">
+              {{comment.voteCount}}
+            </div>
+          </button>
+        </div>
+
+        <div class="col col-offset-5">
+          <div class="row-wrapper note-text">
+            <div> {{ comment.title }} </div>
+            <small> {{comment.commentCount}} comments </small>
+          </div>
+        </div>
+        <button ng-controller="PublicCtrl" class="button button-icon" ng-click="addToPrivate(comment)" ng-show="addToPvt(comment)">
+            <i class="icon ion-ios7-plus-empty"></i>
+        </button>
+      </li>
+
+      <li class="item item-text-wrap row" ng-repeat="child in children">
+        <div class="col col-10 timestamp">
+          <div class="row-wrapper note-text">
+            {{ child.timestamp }}
+          </div>
+        </div>
+        <div class="col col-offset-5">
+          <div class="row-wrapper note-text">
+            {{ child.title }}
+          </div>
+        </div>
+      </li>
+
+      </ul>
+  </div>
+
+<script id="new-task.html" type="text/ng-template">
+
+  <div class="modal">
+    <!-- Modal header bar -->
+    <header class="bar bar-header bar-positive">
+      <h1 class="title">New Comment</h1>
+      <button class="button button-clear button-secondary" ng-click="closeNewTask()">Cancel</button>
+    </header>
+
+    <!-- Modal content area -->
+    <ion-content has-header="true">
+
+    <br/><br/><br/>
+
+      <form ng-submit="submitter(currentTaskTitle)">
+        <div class="list">
+          <label class="item item-input item-stacked-label">
+            
+            <input type="text" placeholder="What would you like to say?" ng-model="currentTaskTitle" id="currentTaskTitle">
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" id="submit" class="button button-block button-positive">Post Comment</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
+
+</script>
+
+</content>
+<!-- </view> -->

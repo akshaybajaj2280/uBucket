@@ -1,0 +1,28 @@
+
+<!-- 
+  Create tabs with an icon and label, using the tabs-positive style. 
+  Each tab's child <nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+<tabs tabs-style="tabs-icon-top" tabs-type="tabs-default">
+
+
+  <!-- Public Tab -->
+  <tab title="Home" icon="icon ion-home" href="#/tab/public">
+    <nav-view name="public-tab"></nav-view>
+  </tab>
+
+
+  <!-- Private Tab -->
+  <tab title="My List" icon="ion-drag" href="#/tab/private">
+    <nav-view name="private-tab"></nav-view>
+  </tab>
+
+
+  <!-- About Tab -->
+  <tab title="Profile" icon="ion-person" href="#/tab/about">
+    <nav-view name="about-tab"></nav-view>
+  </tab>
+
+
+</tabs>

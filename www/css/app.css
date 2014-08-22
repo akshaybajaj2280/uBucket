@@ -1,0 +1,97 @@
+/* Your app's CSS, go crazy, make it your own */
+
+.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 96px;
+  height: 96px;
+}
+
+.done-true {
+  text-decoration: line-through;
+}
+
+.done-true span {
+  color: #999;
+}
+
+.progress {
+  margin: 20px;
+  overflow: visible !important;
+  white-space: nowrap;
+}
+
+.button:hover, .input-box:hover {
+  opacity: 0.7;
+}
+
+.item-input-inset {
+  -webkit-transition: 2s;
+  -moz-transition: 2s;
+  -o-transition: 2s;
+  transition: 2s;
+}
+
+.tab-item:hover {
+  text-decoration: none;
+}
+
+.upvote-true {
+  color: #4a87ee !important;
+}
+
+.upvote-false {
+  color: #444 !important;
+}
+
+.content {
+    margin-top: 64px;
+}
+
+.row-wrapper {
+  display: inline-block;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.button-icon {
+  margin: -5px 0 -5px 0 !important;
+} 
+
+.note-text {
+  line-height: 150%;
+  margin-top: 7px;
+}
+
+a:link {
+    text-decoration:none;
+}
+
+a:visited {
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:none;
+}
+
+a:active {
+    text-decoration:none;
+}
+
+.list li, .col-16 {
+  padding-left: 0;
+}
+
+.timestamp {
+  padding-left: 5px;
+  color: #999;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.upvote-count {
+  line-height: 70%;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Sign In</title>
+
+    <!-- ionic css -->
+    <link href="lib/css/ionic.min.css" rel="stylesheet">
+
+    <!-- your app's css -->
+    <link href="css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+
+    <!-- angularjs scripts -->
+    <script src="lib/js/ionic.js"></script>
+    <script src="lib/js/angular/angular.js"></script>
+    <script src="lib/js/angular/angular-animate.js"></script>
+    <script src="lib/js/angular/angular-sanitize.js"></script>
+    <script src="lib/js/angular-ui/angular-ui-router.js"></script>
+    <script src="lib/js/ionic-angular.js"></script>
+    <script type="text/javascript" src="lib/js/parse-1.2.16.min.js"></script>
+
+    <!-- cordova script -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's script -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+
+<body ng-app="ubucket">
+    <header class="bar bar-header bar-positive">
+    <h1 class="title" id="title">Sign In</h1>
+  </header>
+    <div class="content">
+      <br>
+      <form ng-controller="LoginCtrl" ng-submit="process_sign_in(user)">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="text" ng-model="user.email" placeholder="Email">
+            </label>
+            <label class="item item-input">
+              <input type="password" ng-model="user.password" placeholder="Password">
+            </label>
+            <button type="submit" id="submit" class="button button-block button-positive">
+              Sign in
+            </button>
+            <button id="register" class="button button-block button-stable" ng-click="register()">Register</button>
+            <a href="#reset">Forgot password?</a>
+            <div id="response"><center>{{response}}</center></div>
+          </div>
+      </form>
+      <div class="ng-view"></div>
+    </div>
+</body>
+</html>

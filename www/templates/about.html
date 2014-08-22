@@ -1,0 +1,32 @@
+<!--
+  This template loads for the 'tab.about' state (app.js)
+-->
+<header class="bar bar-header bar-positive">
+  <h1 class="title" id="title">Profile</h1>
+</header>
+<content has-header="true" has-tabs="true" padding="true">
+    <div class="list card">
+        
+        <div class="item item-avatar">
+            <img src="img/blank-avatar.jpg">
+                <h2>{{username}}</h2>
+                <p>Active since 2014</p>
+                </div>
+        
+        <div class="item item-body">
+                <p>You have <font color="3399FF"><b>{{postnum}}</b></font> bucket list items so far.</p>
+                <p>You have completed <font color="3399FF"><b>{{completednum}}</b></font> bucket list items so far.</p>
+                <p>You have <font color="3399FF"><b>{{togo}}</b></font> remaining bucket list items to complete.</p>
+                </div>
+        
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" id = "bugreport" href="#feedback">
+                <i class="icon ion-share"></i>
+                Report a bug
+            </a>
+        </div>
+    </div>
+
+
+</content>
+</view>
