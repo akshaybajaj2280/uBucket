@@ -1,10 +1,10 @@
 # uBucket
 ## A University Based Bucket List
 
-### University of Illinois at Urbana-Champaign
-### CS 428/429: Software Engineering II
-### Professor Darko Marinov
-### Spring 2014
+University of Illinois at Urbana-Champaign
+CS 428/429: Software Engineering II
+Professor Darko Marinov
+Spring 2014
 
 ## Authors:
 Khulan Myagmardorj
